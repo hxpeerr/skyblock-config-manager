@@ -74,11 +74,3 @@ The first time a file is saved, the original is copied next to it as `<name>.bak
 * **A file wasn't saved:** Minecraft was probably still open. Close it, click **Reload**, and make your changes again.
 * **Your antivirus flags the .exe:** it's a false positive. The .exe is built by GitHub from the source code in this repository, and the release page shows each file's SHA-256 so you can check that you have the same file.
 * **Something else went wrong:** the **Activity** log on the Overview tab has the details. Include them when you [open an issue](../../issues/new).
-
-## Updating the Mod List
-
-The mods, features and setting names live in `features.jsonc`. After changing it, raise its `"revision"` number: the app downloads the file from this repository and only switches to a copy with a higher revision than its own.
-
-Every day, the **Mod check** workflow reads each supported mod's settings from its source code and looks up its releases on Modrinth, CurseForge and GitHub. It opens an issue labelled `mod-check` when a mapped setting was renamed or removed, a mod added settings, a new Minecraft version is out, or a popular Hypixel SkyBlock mod on Modrinth, CurseForge or GitHub isn't supported yet. It closes the issue once everything matches again. A weekly Claude Code task works through that issue and opens a pull request with the fixes.
-
-To run the check yourself, you need Python 3 and Git: `python tools/modcheck/check.py`. `--update` saves what it saw as the new baseline, and `--search <regex>` searches every mod's settings. To search CurseForge for new mods too, add a [CurseForge API key](https://console.curseforge.com/) as a repository secret named `CURSEFORGE_API_KEY`.
