@@ -25,7 +25,6 @@ Alerts.alertOnRareDropsPriceMode	enum
 Alerts.alertOnRareDropsSource	enum
 Alerts.alertOnRareSeaCreatures	bool
 Alerts.alertOnRareSeaCreaturesSource	enum
-Alerts.alertOnSackDropsIntoInventory	bool
 Alerts.alertOnSaltExpired	bool
 Alerts.alertOnSeaCreaturesCountThreshold	bool
 Alerts.alertOnSeaCreaturesIncludeCocooned	bool

@@ -472,7 +472,7 @@ def dsl_fields(src, span, lang):
         pos = positional(bargs)
         ident = None
         if pos and literal(pos[0]) is not None and builder not in ("strings",):
-            if builder != "string" or (len(pos) >= 2 and literal(pos[1]) is not None):
+            if builder not in ("string", "keybind") or (len(pos) >= 2 and literal(pos[1]) is not None):
                 ident = literal(pos[0])
         tail = src.after(bend)
         text = src.clean[tail[0]:tail[1]] if tail else ""
