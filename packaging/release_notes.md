@@ -1,4 +1,3 @@
-## 4.1.4
+## 4.1.5
 
-- 11 more supported mods: Devonian, Stella, Feesh, SkyBlock Enhancements, Skyblock Enhanced Storage, SkyCubed, BtrBz, Bazaar Utils, Modern Warp Menu, Secret Routes and Scatha-Pro.
-- 247 shared features, up from 213.
+- SBO's loadout keybinds now count as a shared feature, alongside Odin's, NoFrills' and Devonian's.
