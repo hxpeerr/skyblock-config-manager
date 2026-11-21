@@ -20,7 +20,7 @@ Includes the [desktop app](rust) for managing shared and unique mod settings, a 
 
 <sub>* Supported mods: mods whose shared features are compared directly (listed in [features.jsonc](features.jsonc)). Other Hypixel SkyBlock mods found in your `config` folder still show up in the **Unique** tab so you can search and edit their settings, even though they aren’t compared with other mods.</sub>
 
-Before changing any file, the app saves a `.bak_*` backup of the original. Debug settings are locked so they can’t be changed by accident, and if a file has comments that won’t be kept, the app warns you before saving.
+Before changing any file, the app saves a backup of the original. Debug settings are locked so they can’t be changed by accident, and if a file has comments that won’t be kept, the app warns you before saving.
 
 The app checks Modrinth and CurseForge for newer Fabric builds of the mods in your `mods` folder, downloads updates to the [feature list](features.jsonc) on its own so newly added mods and renamed settings work without a new release, and updates itself from the **App updates** tab.
 
@@ -63,6 +63,6 @@ Run the tests with `cargo test --no-default-features`.
 
 ## Disclaimer
 
-This tool only reads and edits local config files already on your computer. It does not include or distribute any mods or game files.
+This tool only reads and edits local config files already on your computer.
 
 Skyblock Config Manager is an independent project and is not affiliated with, approved by, or endorsed by Hypixel, Mojang, Microsoft, or any of the supported mod authors. “Minecraft” is a trademark of Mojang Synergies AB.
