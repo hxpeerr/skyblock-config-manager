@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "revision": 4,
+  "revision": 5,
   "game_versions": ["26.3", "26.2", "26.1.2", "26.1.1", "26.1", "1.21.11", "1.21.10", "1.21.8", "1.21.7", "1.21.5"],
   "default_game_version": "26.1.2",
   "mods": {
@@ -1052,7 +1052,8 @@
     {"area": "Misc", "name": "Loadout keybinds", "mods": {
       "Odin": "Loadout Keybinds.enabled",
       "NoFrills": "loadoutKeybinds.enabled",
-      "Devonian": "config.loadoutKeybinds"
+      "Devonian": "config.loadoutKeybinds",
+      "SBO": "*loadoutKeybinds"
     }},
     {"area": "Misc", "name": "Command keybinds", "mods": {
       "Odin": "Command Keybinds.enabled",

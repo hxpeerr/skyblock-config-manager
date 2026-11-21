@@ -578,6 +578,9 @@ config.mousePositionLogger	bool
 config.mousePositionRenderer	bool
 config.mutePartySpam	bool
 config.mutePartySpam$detectLeap	bool
+config.muteRareDungeonDrops	bool
+config.muteRareDungeonDrops$exceptSkeletonChestplate	bool
+config.muteRareDungeonDrops$exceptSpray	bool
 config.muteWitherbornSound	bool
 config.nametagShadow	bool
 config.noAbilityCdSound	bool

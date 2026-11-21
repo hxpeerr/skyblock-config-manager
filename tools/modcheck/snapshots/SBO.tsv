@@ -1,10 +1,14 @@
 Burrows.ChainEndColor	color
+Burrows.SpadeGuessOptimizerColor	color
 Burrows.arrowGuess	bool
+Burrows.chainEndTitleDistance	int
 Burrows.closeBurrowDetection	bool
 Burrows.curveSpadeGuess	bool
 Burrows.highlightChainEnds	bool
+Burrows.lookForMaxChains	bool
 Burrows.muteBuggedSpadeSounds	bool
 Burrows.ongoingChainsDisplay	bool
+Burrows.optimizerDetour	int
 Burrows.showArrowSubGuesses	bool
 Burrows.showChainStep	bool
 Burrows.showTextOnSubGuess	bool
@@ -12,17 +16,20 @@ Burrows.showTitleWhenChainEnds	bool
 Burrows.showTitleWhenFailure	bool
 Burrows.simpleChainsOverlayMode	bool
 Burrows.spadeGuess	bool
+Burrows.spadeGuessOptimizer	bool
 Debug.alwaysInSkyblock	bool
 Debug.debugOnlyMessages	bool
 Debug.disableAutoTweaks	bool
 Debug.lootshareDisplayTest	bool
 Debug.repeatableAchie	bool
+Debug.sendBurrowSpots	bool
 Debug.separateAlphaData	bool
 Debug.showInternalStateWaypoints	bool
 Drops.announceCrownOfGreed	bool
 Drops.customBrainFoodMessage	strings
 Drops.customChimeraMessage	strings
 Drops.customFatefulStingerMessage	strings
+Drops.customLootingMessage	strings
 Drops.customManticoreMessage	strings
 Drops.customShimmeringWoolMessage	strings
 Drops.hiltDropMessage	bool
@@ -43,10 +50,27 @@ General.chunkCacheRenderHubIslandOnly	bool
 General.chunkCacheWorkEverywhere	bool
 General.disableAchievements	bool
 General.disableNewSettings	bool
+General.fastAotv	bool
+General.fastAotvDelay	int
 General.hubChunkCache	bool
 General.legionOverlay	bool
 General.phoenixAnnouncer	bool
 General.pickuplogOverlay	bool
+Keybinds.loadout1	keybind
+Keybinds.loadout10	keybind
+Keybinds.loadout11	keybind
+Keybinds.loadout12	keybind
+Keybinds.loadout2	keybind
+Keybinds.loadout3	keybind
+Keybinds.loadout4	keybind
+Keybinds.loadout5	keybind
+Keybinds.loadout6	keybind
+Keybinds.loadout7	keybind
+Keybinds.loadout8	keybind
+Keybinds.loadout9	keybind
+Keybinds.loadoutKeybinds	bool
+Keybinds.loadoutNextPageKey	keybind
+Keybinds.loadoutPreviousPageKey	keybind
 Party Commands.allinviteCommand	bool
 Party Commands.blockUser	bool
 Party Commands.carrotCommand	bool
