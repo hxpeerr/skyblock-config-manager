@@ -54,7 +54,7 @@ Want another mod supported? [Open an issue](https://github.com/hxpeerr/skyblock-
 Requires Rust 1.85 or newer. On Linux, install `libx11-dev libxkbcommon-dev libwayland-dev` first.
 
 ```bash
-git clone [https://github.com/hxpeerr/skyblock-config-manager.git](https://github.com/hxpeerr/skyblock-config-manager.git)
+git clone https://github.com/hxpeerr/skyblock-config-manager.git
 cd skyblock-config-manager/rust
 cargo build --release --bin SkyblockConfigManager
 ```
