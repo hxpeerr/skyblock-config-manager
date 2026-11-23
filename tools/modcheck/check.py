@@ -147,6 +147,22 @@ def tags_of(repo):
     return [t for t in tags if re.search(r"\d+\.\d+", t)]
 
 
+def released_from(repo, versions, commit):
+    if not repo or not versions:
+        return False
+    try:
+        lines = run(["git", "ls-remote", "--tags", repo], 120).splitlines()
+    except (subprocess.SubprocessError, OSError):
+        return False
+    wanted = {version_core(v) for v in versions}
+    for line in lines:
+        sha, _, ref = line.partition("\t")
+        tag = ref.removeprefix("refs/tags/").removesuffix("^{}")
+        if sha == commit and version_core(tag) in wanted:
+            return True
+    return False
+
+
 def release_ref(spec, slug):
     tags = tags_of(spec["repo"])
     if not tags:
@@ -486,7 +502,9 @@ def check_releases(report, features, mods, infos):
             cf_found.append(f"{name}: {p['url']} (project {p['id']}). Add `\"curseforge\": {p['id']}` to its entry in features.jsonc so the app checks CurseForge for its updates too")
         info = infos.get(name)
         dates = [out[p]["date"] for p in ("modrinth", "curseforge", "github") if out.get(p) and out[p].get("date")]
-        if info and dates and max(dates) > info["date"] and (dt.date.fromisoformat(max(dates)) - dt.date.fromisoformat(info["date"])).days > 3:
+        newest = [out[p]["version"] for p in ("modrinth", "curseforge", "github") if out.get(p)]
+        if (info and dates and max(dates) > info["date"] and (dt.date.fromisoformat(max(dates)) - dt.date.fromisoformat(info["date"])).days > 3
+                and not released_from(repo, newest, info["commit"])):
             behind.append(f"{name}: its newest release is from {max(dates)}, but the newest commit on {code(info['branch'])} is from {info['date']}. Its releases may come from another branch or repo. Set `branch` (a branch name, or `release` for its newest release) or `repo` in tools/modcheck/mods.json")
     lines = [f"Minecraft {v}: {', '.join(sorted(n))}" for v, n in sorted(new_mc.items(), key=lambda x: vt(x[0]))]
     report.act("minecraft", "Minecraft versions that mods support but the app doesn't list yet. Add them to `game_versions` in features.jsonc", lines)

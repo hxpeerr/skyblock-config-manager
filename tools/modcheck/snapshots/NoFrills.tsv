@@ -203,10 +203,6 @@ fusionKeybinds.confirm	keybind
 fusionKeybinds.enabled	bool
 fusionKeybinds.repeat	keybind
 gemstoneDesyncFix.enabled	bool
-ghostVision.enabled	bool
-ghostVision.fill	color
-ghostVision.outline	color
-ghostVision.style	enum
 guiKeybinds.back	keybind
 guiKeybinds.down	keybind
 guiKeybinds.enabled	bool

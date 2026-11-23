@@ -602,6 +602,7 @@ Wither Dragons.settings.Dragon Health	bool
 Wither Dragons.settings.Dragon Timer	bool
 Wither Dragons.settings.Dragon Timer HUD	hud
 Wither Dragons.settings.Dragon Title	bool
+Wither Dragons.settings.No Hit Tint	bool
 Wither Dragons.settings.Send Dragon Spawned	bool
 Wither Dragons.settings.Send Dragon Time Alive	bool
 Wither Dragons.settings.Send Ice Sprayed	bool
