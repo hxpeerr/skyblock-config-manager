@@ -8,6 +8,7 @@ general.enableUpdateNotification	bool
 general.hideUnobtainableWarps	bool
 general.hideWarpLabelForIslandsWithOneWarp	bool
 general.hideWarpLabelsUntilIslandHovered	bool
+general.showIslandBrowserButton	bool
 general.showIslandLabels	bool
 general.showJerryIsland	bool
 general.showRegularWarpMenuButton	bool
