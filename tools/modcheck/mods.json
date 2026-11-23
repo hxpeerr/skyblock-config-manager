@@ -13,7 +13,7 @@
     "CustomScoreboard": {"repo": "https://github.com/meowdding/CustomScoreboard", "kind": "dsl"},
     "Catharsis": {"repo": "https://github.com/meowdding/catharsis", "kind": "none"},
     "Devonian": {"repo": "https://github.com/Synnerz/devonian", "kind": "devonian"},
-    "Stella": {"repo": "https://github.com/Eclipse-5214/stella", "kind": "stella"},
+    "Stella": {"repo": "https://github.com/Eclipse-5214/stella", "branch": "release", "kind": "stella"},
     "Feesh": {"repo": "https://github.com/Sleepy-Panda/Feesh", "kind": "dsl"},
     "SkyblockEnhancements": {"repo": "https://github.com/KdGaming0/SkyBlock-Enhancements", "kind": "midnight"},
     "EnhancedStorage": {"repo": "https://github.com/KdGaming0/Enhanced-Storage", "kind": "midnight"},
