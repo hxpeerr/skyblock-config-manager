@@ -1,3 +1,4 @@
-## 4.1.5
+## 4.1.6
 
-- SBO's loadout keybinds now count as a shared feature, alongside Odin's, NoFrills' and Devonian's.
+- Fixed a crash, or a change going to the wrong setting, when a newer mod list downloaded while the edit window was open.
+- Fixed a crash after a mod list update when the config folder couldn't be reopened.
