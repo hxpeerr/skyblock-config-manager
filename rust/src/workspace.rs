@@ -198,6 +198,10 @@ impl Workspace {
     pub fn set_feature_set(&mut self, set: Arc<FeatureSet>) {
         self.features = features_of(&set);
         self.set = set;
+        if self.folder.is_some() {
+            self.resolve_features();
+            self.recompute();
+        }
     }
 
     pub fn use_feature_set(&mut self, set: Arc<FeatureSet>) -> Result<(), String> {
@@ -551,5 +555,30 @@ impl Building {
             self.claimed.insert(path.clone());
         }
         self.mods.insert(name.into(), info);
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn a_new_feature_set_never_leaves_settings_pointing_at_old_features() {
+        let dir = tempfile::tempdir().unwrap();
+        std::fs::write(dir.path().join("skyblocker.json"), r#"{"dungeons": {"dungeonMap": {"enableMap": true}}}"#).unwrap();
+        std::fs::create_dir_all(dir.path().join("odin")).unwrap();
+        std::fs::write(dir.path().join("odin/odin-config.json"), r#"[{"name": "Dungeon Map", "enabled": true}]"#).unwrap();
+        let set = Arc::new(FeatureSet::builtin());
+        let mut ws = Workspace::new(Arc::clone(&set), HashMap::new(), HashMap::new(), &set.default_game_version);
+        ws.load(dir.path()).unwrap();
+        assert!(!ws.shared.is_empty(), "the dungeon map should be shared by Odin and Skyblocker");
+        assert!(!ws.conflicts().0.is_empty(), "both maps are on, so one of them should be a conflict");
+
+        let mut smaller = (*set).clone();
+        smaller.features.clear();
+        ws.set_feature_set(Arc::new(smaller));
+        assert!(ws.shared.is_empty());
+        assert!(ws.settings.iter().all(|s| s.feature.is_none() && !s.shared));
+        assert!(ws.conflicts().2.is_empty());
     }
 }
