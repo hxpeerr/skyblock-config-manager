@@ -318,12 +318,14 @@ impl App {
         let t0 = Instant::now();
         if let Some(set) = self.pending_set.take() {
             self.ws.set_feature_set(set);
+            self.changed();
             self.log(&format!("Now using {}.", self.ws.set.describe()));
         }
         if let Err(e) = self.ws.load(&PathBuf::from(folder)) {
             self.dialog = Some(Dialog::Error { title: "Can't open folder".into(), text: e });
             return;
         }
+        self.edit = None;
         let folder = self.ws.folder.clone().unwrap_or_default();
         self.path_text = folder.to_string_lossy().into_owned();
         self.prefs.insert("config_dir".into(), Value::String(self.path_text.clone()));

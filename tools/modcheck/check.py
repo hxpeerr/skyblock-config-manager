@@ -131,7 +131,8 @@ def describe(e):
     if isinstance(e, urllib.error.HTTPError):
         return f"HTTP {e.code}"
     if isinstance(e, subprocess.CalledProcessError):
-        return (e.stderr or e.stdout or str(e)).strip().splitlines()[-1][:200] if (e.stderr or e.stdout) else str(e)
+        lines = (e.stderr or e.stdout or "").strip().splitlines()
+        return lines[-1][:200] if lines else str(e)
     return str(e)[:200]
 
 
