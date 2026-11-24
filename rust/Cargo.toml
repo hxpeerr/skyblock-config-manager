@@ -1,6 +1,6 @@
 [package]
 name = "skyblock-config-manager"
-version = "4.1.5"
+version = "4.1.6"
 edition = "2024"
 rust-version = "1.85"
 description = "Keeps each Hypixel SkyBlock feature switched on in only one of your Fabric mods."
