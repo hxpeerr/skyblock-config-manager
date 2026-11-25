@@ -39,7 +39,6 @@ Blood Camp.enabled	bool
 Blood Camp.settings.Blood Camp Assist	bool
 Blood Camp.settings.Box Size	number
 Blood Camp.settings.Final Color	color
-Blood Camp.settings.Interpolation	bool
 Blood Camp.settings.Line	bool
 Blood Camp.settings.Mob Box Offset	number
 Blood Camp.settings.Move HUD	hud
@@ -257,7 +256,6 @@ Leap Menu.settings.Healer	keybind
 Leap Menu.settings.Leap Announce	bool
 Leap Menu.settings.Mage	keybind
 Leap Menu.settings.Mode	selector
-Leap Menu.settings.On Key Release	bool
 Leap Menu.settings.Only Classes	bool
 Leap Menu.settings.Render Scale	number
 Leap Menu.settings.Sorting	selector
@@ -305,6 +303,7 @@ Melody Message.settings.Melody Send Coords	bool
 Melody Message.settings.Progress GUI	hud
 Melody Message.settings.Show Player	selector
 Mimic.enabled	bool
+Mimic.settings.Mark Trapped Chests	bool
 Mimic.settings.Send Bat Message	bool
 Mimic.settings.Send Mimic Message	bool
 Mimic.settings.Send Prince Message	bool
