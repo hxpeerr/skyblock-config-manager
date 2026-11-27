@@ -338,6 +338,7 @@ noRender.effectDisplay	bool
 noRender.emptyTooltips	bool
 noRender.enabled	bool
 noRender.entityFire	bool
+noRender.entityGlow	bool
 noRender.expOrbs	bool
 noRender.explosions	bool
 noRender.fallingBlocks	bool

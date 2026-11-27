@@ -1127,6 +1127,10 @@
       "NoFrills": "noRender.entityFire",
       "Devonian": "config.hideEntityFire"
     }},
+    {"area": "Misc", "name": "Hide entity glow", "mods": {
+      "NoFrills": "noRender.entityGlow",
+      "Devonian": "config.removeGlowEffect"
+    }},
     {"area": "Misc", "name": "Hide implosion messages", "mods": {
       "Noba": "chat.filters.hideImplosionDamageMessage",
       "SBO": "*hideImplosionMSG"
