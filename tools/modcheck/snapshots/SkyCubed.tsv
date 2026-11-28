@@ -5,6 +5,7 @@ chat.modifyHypixelCommands	bool
 items.cooldowns	bool
 items.itembars	bool
 notifications.enableNotificationsWidget	bool
+notifications.vanillaToasts	bool
 overlays.coldOverlay	int
 overlays.movableHotbar	bool
 overlays.windOverlay	bool

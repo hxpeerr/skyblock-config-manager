@@ -37,6 +37,7 @@ chat.filters.hideProfileInfo	bool
 chat.filters.hideSeaCreatureCatchMessage	bool
 chat.filters.hideThrowDamageMessage	bool
 chat.filters.hideTipMessages	bool
+chat.filters.muzzleTheParrot	bool
 chat.filters.pickupObtainMessage	bool
 chat.filters.seaCreatureMaxRarity	other
 chat.guildBridgeFormatting.allowSpacesInName	bool
