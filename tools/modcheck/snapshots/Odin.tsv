@@ -39,7 +39,6 @@ Blood Camp.enabled	bool
 Blood Camp.settings.Blood Camp Assist	bool
 Blood Camp.settings.Box Size	number
 Blood Camp.settings.Final Color	color
-Blood Camp.settings.Interpolation	bool
 Blood Camp.settings.Line	bool
 Blood Camp.settings.Mob Box Offset	number
 Blood Camp.settings.Move HUD	hud
@@ -257,7 +256,6 @@ Leap Menu.settings.Healer	keybind
 Leap Menu.settings.Leap Announce	bool
 Leap Menu.settings.Mage	keybind
 Leap Menu.settings.Mode	selector
-Leap Menu.settings.On Key Release	bool
 Leap Menu.settings.Only Classes	bool
 Leap Menu.settings.Render Scale	number
 Leap Menu.settings.Sorting	selector
@@ -305,6 +303,7 @@ Melody Message.settings.Melody Send Coords	bool
 Melody Message.settings.Progress GUI	hud
 Melody Message.settings.Show Player	selector
 Mimic.enabled	bool
+Mimic.settings.Mark Trapped Chests	bool
 Mimic.settings.Send Bat Message	bool
 Mimic.settings.Send Mimic Message	bool
 Mimic.settings.Send Prince Message	bool
@@ -505,14 +504,12 @@ Temporary Waypoints.settings.From All Chat	bool
 Temporary Waypoints.settings.From Party Chat	bool
 Temporary Waypoints.settings.Personal Waypoint	bool
 Terminal Simulator.enabled	bool
-Terminal Simulator.settings.First Click Prot	bool
 Terminal Simulator.settings.Ping	number
 Terminal Solver.enabled	bool
 Terminal Solver.settings.Background	color
 Terminal Solver.settings.Client Prediction	bool
 Terminal Solver.settings.Debug	bool
-Terminal Solver.settings.First Click Prot	number
-Terminal Solver.settings.Lag Protection Ticks	number
+Terminal Solver.settings.End Term Prot Time	number
 Terminal Solver.settings.Melody Background	color
 Terminal Solver.settings.Melody Column	color
 Terminal Solver.settings.Melody Pointer	color
@@ -534,7 +531,6 @@ Terminal Solver.settings.Rubix 2	color
 Terminal Solver.settings.Rubix Mode	selector
 Terminal Solver.settings.Rubix Text	color
 Terminal Solver.settings.Select	color
-Terminal Solver.settings.Server Lag	bool
 Terminal Solver.settings.Slot gap	number
 Terminal Solver.settings.Starts With	color
 Terminal Solver.settings.Stop Melody Solver	bool
@@ -566,6 +562,7 @@ Tick Timers.settings.Display Symbol	bool
 Tick Timers.settings.Display in Ticks	bool
 Tick Timers.settings.Fire Freeze Hud	hud
 Tick Timers.settings.Goldor Hud	hud
+Tick Timers.settings.Server Lag Hud	hud
 Tick Timers.settings.Show Prefix	bool
 Tick Timers.settings.Start timer	bool
 Tick Timers.settings.Storm Lightning Hud	hud

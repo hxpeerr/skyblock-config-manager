@@ -16,7 +16,55 @@ def read(path):
     return Path(path).read_text(encoding="utf-8", errors="replace")
 
 
-def mask(text):
+def string_end(text, i, kotlin):
+    n = len(text)
+    raw = text.startswith('"""', i)
+    j = i + 3 if raw else i + 1
+    while j < n:
+        c = text[j]
+        if raw:
+            if text.startswith('"""', j):
+                j += 3
+                while j < n and text[j] == '"':
+                    j += 1
+                return j
+        elif c == "\\":
+            j += 2
+            continue
+        elif c == '"':
+            return j + 1
+        elif c == "\n":
+            return j
+        if kotlin and text.startswith("${", j):
+            j = template_end(text, j + 2, kotlin)
+            continue
+        j += 1
+    return n
+
+
+def template_end(text, j, kotlin):
+    n, depth = len(text), 1
+    while j < n:
+        c = text[j]
+        if c == '"':
+            j = string_end(text, j, kotlin)
+            continue
+        if c == "'":
+            m = CHAR.match(text, j)
+            if m:
+                j = m.end()
+                continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return j + 1
+        j += 1
+    return n
+
+
+def mask(text, kotlin=False):
     out = list(text)
     n = len(text)
 
@@ -46,17 +94,12 @@ def mask(text):
             else:
                 i += 1
         elif c == '"':
+            j = string_end(text, i, kotlin)
             if text.startswith('"""', i):
-                j = text.find('"""', i + 3)
-                j = n if j < 0 else j + 3
                 blank(i + 3, j - 3, "_")
-                i = j
             else:
-                j = i + 1
-                while j < n and text[j] not in '"\n':
-                    j += 2 if text[j] == "\\" else 1
-                blank(i + 1, j, "_")
-                i = j + 1
+                blank(i + 1, j - 1 if j > i + 1 and text[j - 1] == '"' else j, "_")
+            i = j
         else:
             m = CHAR.match(text, i)
             if m:
@@ -71,7 +114,7 @@ class Source:
     def __init__(self, path):
         self.path = Path(path)
         self.text = read(path)
-        self.code = mask(self.text)
+        self.code = mask(self.text, self.path.suffix in (".kt", ".kts"))
         self.clean = "".join(t if c != " " or t in " \t\r\n" else " " for t, c in zip(self.text, self.code))
 
     def close(self, i):
@@ -396,13 +439,13 @@ def odin(root):
             if not span:
                 continue
             a, b = span
-            for s in re.finditer(r"\bby\s+(\w+Setting|HUD)\s*\(", src.code[a:b]):
+            for s in re.finditer(r"\bby\s+(\w+Setting|HUD|TextHUD)\s*\(", src.code[a:b]):
                 if s.group(1) in ("ActionSetting", "DropdownSetting"):
                     continue
                 sargs, _, _ = src.args(a + s.end() - 1)
                 name = literal(named(sargs, "name") or (positional(sargs) or [None])[0])
                 if name:
-                    typ = BOOL if s.group(1) == "BooleanSetting" else s.group(1).removesuffix("Setting").lower()
+                    typ = BOOL if s.group(1) == "BooleanSetting" else "hud" if s.group(1) == "TextHUD" else s.group(1).removesuffix("Setting").lower()
                     rows.append((f"{mod}.settings.{name}", typ, f"{mod} > {name}"))
     return rows
 

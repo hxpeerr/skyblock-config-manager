@@ -29,6 +29,7 @@
     "github:swofty-developments/hypixelrecreation": "a Hypixel server remake, not a client mod",
     "modrinth:better-hypixel-chat": "chat styling with no settings",
     "modrinth:detexturify": "removes the forced texture pack, which no supported mod does",
+    "modrinth:packdisabler-for-hypixel-skyblock": "blocks the forced texture pack, which no supported mod does",
     "modrinth:enhanced-skyrecipes": "a recipe viewer whose settings only apply to its own item list",
     "modrinth:marketguard": "bid and price protection, which no supported mod has",
     "modrinth:packcore": "a modpack helper; its settings are backups and update notices",

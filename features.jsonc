@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "revision": 5,
+  "revision": 6,
   "game_versions": ["26.3", "26.2", "26.1.2", "26.1.1", "26.1", "1.21.11", "1.21.10", "1.21.8", "1.21.7", "1.21.5"],
   "default_game_version": "26.1.2",
   "mods": {
@@ -116,6 +116,10 @@
       "NoFrills": "mimicMessage.enabled",
       "Skyblocker": "dungeons.mimicMessage.sendMimicMessage",
       "Devonian": "config.mimicKilled"
+    }},
+    {"area": "Dungeons", "name": "Mimic chest highlight", "mods": {
+      "Odin": "Mimic.settings.Mark Trapped Chests",
+      "Devonian": "config.boxMimicChest"
     }},
     {"area": "Dungeons", "name": "Auto requeue", "mods": {
       "Odin": "Dungeon Queue.enabled",
@@ -1122,6 +1126,10 @@
       "SkyOcean": "*misc.hideEntityFire",
       "NoFrills": "noRender.entityFire",
       "Devonian": "config.hideEntityFire"
+    }},
+    {"area": "Misc", "name": "Hide entity glow", "mods": {
+      "NoFrills": "noRender.entityGlow",
+      "Devonian": "config.removeGlowEffect"
     }},
     {"area": "Misc", "name": "Hide implosion messages", "mods": {
       "Noba": "chat.filters.hideImplosionDamageMessage",

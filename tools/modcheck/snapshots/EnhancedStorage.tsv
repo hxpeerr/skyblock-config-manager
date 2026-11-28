@@ -22,6 +22,8 @@ horizontalMargin	int
 innerPadding	int
 inventoryPosition	inventoryposition
 invertScrollDirection	bool
+itemListFavoritesWidth	int
+itemListWidth	int
 layoutDensity	layoutdensity
 maxPagePerRow	int
 modWidgetGap	int
@@ -39,6 +41,8 @@ panelGap	int
 panelsBesidePages	bool
 rememberScrollOnReopen	bool
 rememberSearchOnReopen	bool
+roomForItemList	bool
+roomForItemListFavorites	bool
 saveCursorPosition	bool
 saveCursorPositionWindow	double
 scrollbarGap	int
@@ -51,9 +55,11 @@ showEditButton	bool
 showEmptySlotCount	bool
 showItemTooltipsOnCachedItems	bool
 showItemTotals	bool
+showPageValueButton	bool
 showSettingsButton	bool
 showStorageOverviewCard	bool
 showThemeButton	bool
 showToolkitButton	bool
+skyHanniChestValuePosition	skyhannichestvalueposition
 slotSize	slotsize
 wasdPageNavigation	bool
